@@ -7,9 +7,18 @@ public class PlayerHealth : Health //i've changed monobehaviour so this now inhe
 {
     public Image healthUIImage;
 
+    public LoseGame loseGameScript;
+
     private void Update()
     {
         UpdateHealthUI();
+
+        if (currentHealth <= 0) //if player die call GameLost function in LoseGame script
+        {
+            TriggerDeath(); // NOT SURE IF THIS IS CORRECT ******************************************************
+            Die(); // NOT SURE IF THIS IS CORRECT ******************************************************
+            loseGameScript.GameLost();
+        }
     }
 
     public override void TakeDamage(int amount)

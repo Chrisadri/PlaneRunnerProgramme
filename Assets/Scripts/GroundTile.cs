@@ -7,6 +7,8 @@ public class GroundTile : MonoBehaviour
 
     GroundSpawner groundSpawner; //reff to GroundSpawner script
 
+    [SerializeField] float groundSpeed = 10;
+
     void Start()
     {
         groundSpawner = GameObject.FindObjectOfType<GroundSpawner>(); //returns groundspawner
@@ -15,12 +17,12 @@ public class GroundTile : MonoBehaviour
     private void OnTriggerExit(Collider other) //when something exits the trigger this happens
     {
         groundSpawner.SpawnTile();
-        Destroy(gameObject, 2); //destroys the object (ground tile) 2 second after leaving the trigger collider on the inspector: MAY HAVE TO CHANGE COLLIDER SIZE
+        Destroy(gameObject, 1); //destroys the object (ground tile) 1 second after leaving the trigger collider on the inspector: MAY HAVE TO CHANGE COLLIDER SIZE
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        transform.Translate(0, 0, -groundSpeed * Time.deltaTime);
     }
 }
