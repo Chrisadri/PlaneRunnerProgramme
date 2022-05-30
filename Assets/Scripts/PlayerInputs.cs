@@ -26,7 +26,7 @@ public class PlayerInputs : MonoBehaviour
                 vertical = "P1Vertical";
                 horizontal = "P1Horizontal";
                fire = KeyCode.E;
-               // reload = KeyCode.Q;
+                // reload = KeyCode.Q;                
                 break;
             case 2: //player 2
                 vertical = "P2Vertical";

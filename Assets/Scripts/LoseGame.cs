@@ -10,14 +10,14 @@ public class LoseGame : MonoBehaviour
     public static LoseGame loseGameScript;
     public float score;//reff to timer scoring system
     public BuildingsSpawner buildingsSpawnerScript;//reff to BuildingsSpawner script
-    
-    
+
+
     
 
     public void GameLost()
     {
         buildingsSpawnerScript.canSpawn = false;//stops buildings spawning after death
-
+        
         SceneManager.LoadScene(0);//loads menu scene
     }
 

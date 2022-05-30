@@ -20,7 +20,7 @@ public class CharacterMovement : MonoBehaviour
     void Start()
     {
         cc = GetComponent<CharacterController>();
-        // anim = GetComponentInChildren<Animator>(); add this when i add animations to the children parts
+        anim = GetComponentInChildren<Animator>(); //add this when i add animations to the children parts
         inputs = GetComponent<PlayerInputs>(); // getting the component for the P1 and P2 inputs
     }
 
@@ -35,22 +35,23 @@ public class CharacterMovement : MonoBehaviour
         {
             movementDirection.Set(h, 0, v); // setting x and y axis, the y axis is set to 0 as we're not going up and down
             cc.Move(movementDirection * speedMultiplier * Time.deltaTime); //move method requires a movement to go in, default it moves 1 step in that direction so needs to be multiplied to go faster and smoother
-            /* anim.SetBool("HasInput", true); //this sets the animation blend tree of anim NAMES HasInput to true to start animating
+            anim.SetBool("HasInput", true); //(HAD THIS // out) this sets the animation blend tree of anim NAMES HasInput to true to start animating
         }
         else
         {
-            anim.SetBool("HasInput", false); // if it's false, the animtion blend tree will not animate or animate an idle probably */
-        }
+            anim.SetBool("HasInput", false); // if it's false, the animtion blend tree will not animate or animate an idle probably //(HAD THIS // out)
+        } 
 
-        /* anim.SetFloat("ForwardMomentum", v); // this is to set the animations for momentum straight that i've named exactly ForwardMomentum
+        //BELOW WAS */ OUT ******************
+        anim.SetFloat("ForwardMomentum", v); // this is to set the animations for momentum straight that i've named exactly ForwardMomentum
         anim.SetFloat("SideMomentum", h); // this is to set the animations for momentum straight that i've named exactly SideMomentum 
         
-        !!!!I THINK BELOW SETS THE ANIMATIONS TO BE FACTING THE CORRECT WAYS, RELATIVE TO WHAT WAY ITS FACING (CHANGING THE ABOVE TWO LINES WHILST ADDING THE ONE BELOW AS WELL)!!!! 
+        //!!!!I THINK BELOW SETS THE ANIMATIONS TO BE FACTING THE CORRECT WAYS, RELATIVE TO WHAT WAY ITS FACING (CHANGING THE ABOVE TWO LINES WHILST ADDING THE ONE BELOW AS WELL)!!!! 
         var animationVector = transform.InverseTransformDirection(cc.velocity);
         
         anim.SetFloat("ForwardMomentum", animationVector.z);
         anim.SetFloat("SideMomentum", animationVector.x);
-         */
+         // TO HERE WAS /* OUT**************
 
     }
 }

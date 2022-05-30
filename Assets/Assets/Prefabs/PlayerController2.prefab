@@ -130,6 +130,7 @@ MonoBehaviour:
   canBeDamaged: 1
   healthUI: {fileID: 5532370857488591703, guid: 8c5af65c946c84b43a21c8ca8cd03a49, type: 3}
   healthUIImage: {fileID: 0}
+  loseGameScript: {fileID: 0}
 --- !u!1001 &4457699719599582655
 PrefabInstance:
   m_ObjectHideFlags: 0
